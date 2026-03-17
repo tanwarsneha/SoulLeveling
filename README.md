@@ -1,20 +1,88 @@
-# React + Vite
+# SoulLeveling 🧘‍♀️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+SoulLeveling is a **mental wellness web application** that helps users track their emotional well-being and improve focus through meditation and calming sound sessions. The platform provides **mood analytics, meditation guidance, and focus sounds** to support better mental health habits.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:**<br>
+👉  [Visit SoulLeveling](https://soulleveling.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* 📊 **Mood Tracking & Analytics** – Log daily moods and analyze emotional patterns over time
+* 🧘 **Meditation Sessions** – Guided meditation to promote relaxation and mindfulness
+* 🎧 **Focus Sounds** – Background sound sessions to improve concentration and productivity
+* 📱 **Responsive UI** – Works across desktop and mobile devices
+* ⚡ **Fast Performance** – Built using Vite for optimized development and build speed
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-...
-git clone <https://github.com/SHR1EE/soul-leveling-react.git>
-cd soul-leveling-react
-npm install react-router-dom framer-motion lucide-react @supabase/supabase-js
+**Frontend**
+
+* React.js
+* Vite
+* Tailwind CSS
+
+**Backend / Services**
+
+* Supabase (Authentication + Database)
+
+**Tools**
+
+* ESLint
+* PostCSS
+
+## 📂 Project Structure
+
+```
+src
+ ├── assets        # Images and static resources
+ ├── components    # Reusable UI components
+ ├── context       # Global state management
+ ├── data          # Static data
+ ├── pages         # Application pages
+ ├── services      # API and Supabase client
+ ├── App.jsx
+ └── main.jsx
+```
+
+
+## 🚀 Running the Project Locally
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/tanwarsneha/SoulLeveling.git
+```
+
+2. Navigate to the project folder
+
+```bash
+cd SoulLeveling
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the development server
+
+```bash
+npm run dev
+```
+
+The app will run at:
+
+```
+http://localhost:5173
+```
+
+
+## 🌱 Future Improvements
+
+* Personalized meditation recommendations
+* AI-based mood insights
+* Community wellness features
+
+
