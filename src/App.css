@@ -1,0 +1,274 @@
+/* FILE: src/App.css */
+
+/* 1. GLOBAL SETTINGS & TRANSITIONS */
+:root {
+  --transition-speed: 0.5s;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+/* =========================================
+   THEME A: INTENSE MEDITATIVE (Dark Mode)
+   ========================================= */
+.app-container.dark {
+  /* The Void Background */
+  --bg-core: radial-gradient(circle at 50% 50%, #111125 0%, #0a0a15 60%, #000000 100%);
+  
+  /* Glass Cards (The boxes) */
+  --card-glass: rgba(30, 30, 50, 0.6);
+  --card-border: rgba(255, 215, 0, 0.15); /* Faint Gold Border */
+  --card-hover: rgba(40, 40, 70, 0.8);
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0c0; /* Soft Blue-Grey */
+  --text-accent: #ffd700;    /* Gold Text */
+  
+  /* BUTTON 1: Primary Action (Gold/Yellow) */
+  --btn-bg: linear-gradient(135deg, #ffd700 18%, #ffb900 81%);
+  --btn-text: #1a1a2e; /* Dark Text */
+  --btn-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+
+  /* BUTTON 2: Secondary Action (Bluish/Greyish) - NEW! */
+  --btn-cool-bg: linear-gradient(135deg, #406284 18%, #345a5f 81%); /* Blue-Grey */
+  --btn-cool-text: #ffffff;
+  --btn-cool-shadow: 0 5px 15px rgba(76, 161, 175, 0.3);
+  
+  /* Special Effects */
+  --glow-color: rgba(155, 133, 226, 0.3); /* Purple Glow */
+}
+
+/* =========================================
+   THEME B: PEACEFUL VIBES (Light Mode)
+   ========================================= */
+.app-container.light {
+  /* The Misty Background */
+  --bg-core: linear-gradient(120deg, #fff5f7 0%, #e8f5e9 50%, #e0f7fa 100%);
+  
+  /* Glass Cards (The boxes) */
+  --card-glass: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(255, 182, 193, 0.5); /* Faint Pink Border */
+  --card-hover: rgba(255, 255, 255, 0.9);
+  
+  /* Text Colors */
+  --text-primary: #2d3436;   /* Dark Grey */
+  --text-secondary: #636e72; /* Muted Grey */
+  --text-accent: #e91e63;    /* Pink Accent */
+  
+  /* BUTTON 1: Primary Action (Pink Pastel) */
+  --btn-bg: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+  --btn-text: #4a4a4a;
+  --btn-shadow: 0 5px 15px rgba(255, 154, 158, 0.4);
+
+  /* BUTTON 2: Secondary Action (Fresh Green) - NEW! */
+  --btn-cool-bg: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); /* Minty Green */
+  --btn-cool-text: #2d3436;
+  --btn-cool-shadow: 0 5px 15px rgba(132, 250, 176, 0.4);
+  
+  /* Special Effects */
+  --glow-color: rgba(255, 182, 193, 0.4); /* Pink Glow */
+}
+
+/* =========================================
+   APPLYING THE THEME (The Magic Part)
+   ========================================= */
+
+/* 1. Base App Styles */
+.app-container {
+  background: var(--bg-core);
+  color: var(--text-primary);
+  min-height: 100vh;
+  transition: background var(--transition-speed), color var(--transition-speed);
+  font-family: var(--font-main);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 2. AUTOMATIC TEXT COLORING */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  transition: color var(--transition-speed);
+}
+
+p, span, li, a {
+  color: var(--text-secondary);
+  transition: color var(--transition-speed);
+}
+
+strong, b {
+  color: var(--text-primary);
+}
+
+/* 3. UNIVERSAL GLASS CARD STYLE */
+/* Use className="glass-card" on any div */
+.glass-card {
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+  background: var(--card-hover);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px var(--glow-color);
+}
+
+/* 4. DEFAULT BUTTON (Primary - Gold/Pink) */
+ /*button {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+  */
+.btn-primary {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/*
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+*/
+.btn-primary:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* 5. NEW BUTTON STYLE (Secondary - Blue/Green) */
+/* Add className="btn-secondary" to use this! */
+.btn-secondary {
+  background: var(--btn-cool-bg) !important;
+  color: var(--btn-cool-text) !important;
+  box-shadow: var(--btn-cool-shadow) !important;
+}
+
+/* 6. Inputs */
+input {
+  background: rgba(0,0,0,0.1);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* ADD THIS TO THE BOTTOM OF YOUR App.css */
+
+/* 1. Section Wrappers */
+section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--text-primary), var(--text-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2. Feature Cards Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* 3. Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  background: var(--card-glass);
+  border: 1px solid var(--card-border);
+  padding: 15px;
+  border-radius: 12px;
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus {
+  border-color: var(--text-accent);
+}
+
+/* 4. Footer Styling */
+.main-footer {
+  border-top: 1px solid var(--card-border);
+  padding: 60px 24px;
+  margin-top: 100px;
+  background: var(--card-glass);
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--text-accent);
+}
+
+/* ADD TO src/App.css */
+
+/* The Pulse for the Granthis (Knots) */
+@keyframes knot-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+.granthi-knot {
+  animation: knot-pulse 3s infinite;
+}
+
+/* The Sushumna Line Gradient Animation */
+.sushumna-line {
+  background: linear-gradient(to bottom, 
+    var(--text-accent), 
+    #ff0000, /* Root */
+    #ffa500, /* Sacral */
+    #ffff00, /* Solar */
+    #008000, /* Heart */
+    #0000ff, /* Throat */
+    #4b0082, /* Third Eye */
+    #aa4baa  /* Crown */
+  );
+  background-size: 100% 200%;
+  transition: width 0.3s;
+}
